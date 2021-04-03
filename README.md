@@ -1,5 +1,5 @@
-# Project name here
-> Summary description here.
+# AutoFE: Deep Learning-based Automatic Feature Extraction 
+> Automatic Feature Extraction in Images and Texts using Transfer Learning
 
 
 This file will become your README and also the index of your documentation.
