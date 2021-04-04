@@ -1,7 +1,7 @@
-# AutoFE: Deep Learning-based Automatic Feature Extraction 
-> Automatic Feature Extraction in Images and Texts using Transfer Learning
+# `deepfeatx`: Deep Learning Feature Extractor of Images from Transfer Learning Models
+> Helper for automatic extraction of features from images (and soon text as well) from transfer learning models like ResNet, VGG16 and EfficientNet.
 
 
 ## Install
 
-`pip install auto_feature_extraction`
+`pip install deepfeatx`

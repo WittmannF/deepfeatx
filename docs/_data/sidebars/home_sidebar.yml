@@ -13,6 +13,6 @@ entries:
       title: ImageFeatureExtractor
       url: image.html
     output: web
-    title: auto_feature_extraction
+    title: deepfeatx
   output: web
   title: Sidebar

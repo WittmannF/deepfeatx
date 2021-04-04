@@ -1,5 +1,5 @@
 {
-  "auto_feature_extraction": {
+  "deepfeatx": {
     "Overview": "/",
     "ImageFeatureExtractor": "image.html"
   }
