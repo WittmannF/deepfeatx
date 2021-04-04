@@ -2,19 +2,11 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"download_dataset": "00_auto_feature_extraction.ipynb",
-         "ImageFeatureExtractor": "00_auto_feature_extraction.ipynb",
-         "ImageFile.LOAD_TRUNCATED_IMAGES": "00_auto_feature_extraction.ipynb",
-         "PROJECT_FOLDER": "00_auto_feature_extraction.ipynb",
-         "DATA_PATH": "00_auto_feature_extraction.ipynb",
-         "DOGSCATS": "00_auto_feature_extraction.ipynb",
-         "DOG_BREED_URL": "00_auto_feature_extraction.ipynb",
-         "ZIP_FILENAME": "00_auto_feature_extraction.ipynb",
-         "PETS": "00_auto_feature_extraction.ipynb",
-         "TRAIN_PATH": "00_auto_feature_extraction.ipynb",
-         "VALID_PATH": "00_auto_feature_extraction.ipynb"}
+index = {"download_dataset": "00_image.ipynb",
+         "ImageFeatureExtractor": "00_image.ipynb",
+         "ImageFile.LOAD_TRUNCATED_IMAGES": "00_image.ipynb"}
 
-modules = ["auto_feature_extraction.py"]
+modules = ["image.py"]
 
 doc_url = "https://wittmannf.github.io/auto_feature_extraction/"
 

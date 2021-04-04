@@ -11,7 +11,7 @@ entries:
       url: /
     - output: web,pdf
       title: ImageFeatureExtractor
-      url: auto_feature_extraction.html
+      url: image.html
     output: web
     title: auto_feature_extraction
   output: web
