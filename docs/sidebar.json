@@ -1,6 +1,6 @@
 {
-  "feature_extraction": {
+  "auto_feature_extraction": {
     "Overview": "/",
-    "ImageFeatureExtractor": "feature_extraction.html"
+    "ImageFeatureExtractor": "auto_feature_extraction.html"
   }
 }
