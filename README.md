@@ -1,4 +1,4 @@
-# `deepfeatx`: Deep Learning Feature Extractor of Images from Transfer Learning Models
+# `deepfeatx`: Deep Learning Feature Extractor of Images using Transfer Learning Models
 > Helper for automatic extraction of features from images (and soon text as well) from transfer learning models like ResNet, VGG16 and EfficientNet.
 
 
