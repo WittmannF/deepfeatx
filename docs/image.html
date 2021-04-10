@@ -77,7 +77,7 @@ nb_path: "00_image.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h4 id="download_dataset" class="doc_header"><code>download_dataset</code><a href="https://github.com/wittmannf/deepfeatx/tree/{branch}/deepfeatx/image.py#L30" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download_dataset</code>(<strong><code>data_url</code></strong>, <strong><code>zip_filename</code></strong>)</p>
+<h4 id="download_dataset" class="doc_header"><code>download_dataset</code><a href="https://github.com/wittmannf/deepfeatx/tree/{branch}/deepfeatx/image.py#L31" class="source_link" style="float:right">[source]</a></h4><blockquote><p><code>download_dataset</code>(<strong><code>data_url</code></strong>, <strong><code>zip_filename</code></strong>)</p>
 </blockquote>
 
 </div>
@@ -101,7 +101,7 @@ nb_path: "00_image.ipynb"
 
 
 <div class="output_markdown rendered_html output_subarea ">
-<h2 id="ImageFeatureExtractor" class="doc_header"><code>class</code> <code>ImageFeatureExtractor</code><a href="https://github.com/wittmannf/deepfeatx/tree/{branch}/deepfeatx/image.py#L47" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ImageFeatureExtractor</code>(<strong><code>model_name</code></strong>=<em><code>'resnet'</code></em>, <strong><code>target_shape</code></strong>=<em><code>(224, 224, 3)</code></em>)</p>
+<h2 id="ImageFeatureExtractor" class="doc_header"><code>class</code> <code>ImageFeatureExtractor</code><a href="https://github.com/wittmannf/deepfeatx/tree/{branch}/deepfeatx/image.py#L49" class="source_link" style="float:right">[source]</a></h2><blockquote><p><code>ImageFeatureExtractor</code>(<strong><code>model_name</code></strong>=<em><code>'resnet'</code></em>, <strong><code>target_shape</code></strong>=<em><code>(224, 224, 3)</code></em>)</p>
 </blockquote>
 
 </div>
@@ -123,7 +123,7 @@ nb_path: "00_image.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Test">Test<a class="anchor-link" href="#Test"> </a></h2>
+<h2 id="Converting-Image-to-Vector">Converting Image to Vector<a class="anchor-link" href="#Converting-Image-to-Vector"> </a></h2>
 </div>
 </div>
 </div>
@@ -134,7 +134,7 @@ nb_path: "00_image.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ife</span> <span class="o">=</span> <span class="n">ImageFeatureExtractor</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ife</span> <span class="o">=</span> <span class="n">ImageFeatureExtractor</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;resnet&#39;</span><span class="p">)</span>
 <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/WittmannF/ImageDataGenerator-example/master/flow_from_dataframe/train/cat.101.jpg&#39;</span>
 <span class="n">img</span><span class="o">=</span><span class="n">ife</span><span class="o">.</span><span class="n">read_img_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">img</span>
@@ -232,7 +232,7 @@ nb_path: "00_image.ipynb"
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Found 128 validated image filenames.
-4/4 [==============================] - 18s 4s/step
+4/4 [==============================] - 17s 4s/step
 </pre>
 </div>
 </div>
@@ -259,6 +259,7 @@ nb_path: "00_image.ipynb"
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>filepaths</th>
       <th>0</th>
       <th>1</th>
       <th>2</th>
@@ -268,8 +269,8 @@ nb_path: "00_image.ipynb"
       <th>6</th>
       <th>7</th>
       <th>8</th>
-      <th>9</th>
       <th>...</th>
+      <th>2038</th>
       <th>2039</th>
       <th>2040</th>
       <th>2041</th>
@@ -279,12 +280,12 @@ nb_path: "00_image.ipynb"
       <th>2045</th>
       <th>2046</th>
       <th>2047</th>
-      <th>filepaths</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
+      <td>./sample_data/cats_vs_dogs/train/cat/cat.0.jpg</td>
       <td>0.133268</td>
       <td>0.416758</td>
       <td>1.458256</td>
@@ -294,8 +295,8 @@ nb_path: "00_image.ipynb"
       <td>0.013365</td>
       <td>1.423097</td>
       <td>0.413051</td>
-      <td>0.010663</td>
       <td>...</td>
+      <td>0.463998</td>
       <td>0.461862</td>
       <td>1.845307</td>
       <td>0.395472</td>
@@ -305,10 +306,10 @@ nb_path: "00_image.ipynb"
       <td>1.694634</td>
       <td>0.374132</td>
       <td>0.520977</td>
-      <td>./sample_data/cats_vs_dogs/train/cat/cat.0.jpg</td>
     </tr>
     <tr>
       <th>1</th>
+      <td>./sample_data/cats_vs_dogs/train/cat/cat.1.jpg</td>
       <td>0.301924</td>
       <td>1.074781</td>
       <td>0.000000</td>
@@ -318,8 +319,8 @@ nb_path: "00_image.ipynb"
       <td>0.103987</td>
       <td>0.011720</td>
       <td>0.000000</td>
-      <td>0.043833</td>
       <td>...</td>
+      <td>0.000000</td>
       <td>0.000000</td>
       <td>0.204798</td>
       <td>0.089238</td>
@@ -329,10 +330,10 @@ nb_path: "00_image.ipynb"
       <td>0.046991</td>
       <td>0.007193</td>
       <td>0.000000</td>
-      <td>./sample_data/cats_vs_dogs/train/cat/cat.1.jpg</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>./sample_data/cats_vs_dogs/train/cat/cat.10.jpg</td>
       <td>0.071524</td>
       <td>0.014293</td>
       <td>0.007412</td>
@@ -342,8 +343,8 @@ nb_path: "00_image.ipynb"
       <td>0.057757</td>
       <td>0.000000</td>
       <td>0.000000</td>
-      <td>0.118381</td>
       <td>...</td>
+      <td>0.356797</td>
       <td>0.666519</td>
       <td>0.000000</td>
       <td>1.286243</td>
@@ -353,10 +354,10 @@ nb_path: "00_image.ipynb"
       <td>0.184107</td>
       <td>0.146302</td>
       <td>0.191065</td>
-      <td>./sample_data/cats_vs_dogs/train/cat/cat.10.jpg</td>
     </tr>
     <tr>
       <th>3</th>
+      <td>./sample_data/cats_vs_dogs/train/cat/cat.100.jpg</td>
       <td>0.405527</td>
       <td>0.018546</td>
       <td>0.059608</td>
@@ -366,8 +367,8 @@ nb_path: "00_image.ipynb"
       <td>0.029712</td>
       <td>0.002353</td>
       <td>0.000000</td>
-      <td>0.420814</td>
       <td>...</td>
+      <td>0.572264</td>
       <td>0.075824</td>
       <td>0.186881</td>
       <td>0.821028</td>
@@ -377,10 +378,10 @@ nb_path: "00_image.ipynb"
       <td>0.062721</td>
       <td>1.133202</td>
       <td>0.188214</td>
-      <td>./sample_data/cats_vs_dogs/train/cat/cat.100.jpg</td>
     </tr>
     <tr>
       <th>4</th>
+      <td>./sample_data/cats_vs_dogs/train/cat/cat.101.jpg</td>
       <td>0.097891</td>
       <td>0.686931</td>
       <td>0.316419</td>
@@ -390,8 +391,8 @@ nb_path: "00_image.ipynb"
       <td>0.181614</td>
       <td>0.015783</td>
       <td>0.152097</td>
-      <td>0.047016</td>
       <td>...</td>
+      <td>0.023964</td>
       <td>0.134328</td>
       <td>0.046708</td>
       <td>1.474841</td>
@@ -401,7 +402,6 @@ nb_path: "00_image.ipynb"
       <td>0.216485</td>
       <td>0.725319</td>
       <td>0.006628</td>
-      <td>./sample_data/cats_vs_dogs/train/cat/cat.101.jpg</td>
     </tr>
   </tbody>
 </table>
@@ -425,7 +425,8 @@ nb_path: "00_image.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">=</span><span class="n">ife</span><span class="o">.</span><span class="n">extract_features_from_directory</span><span class="p">(</span><span class="s1">&#39;./sample_data/cats_vs_dogs/train&#39;</span><span class="p">,</span>
-                                       <span class="n">include_classes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                                       <span class="n">export_class_names</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                       <span class="n">classes_as_folders</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
@@ -440,7 +441,7 @@ nb_path: "00_image.ipynb"
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Found 256 images belonging to 2 classes.
-8/8 [==============================] - 33s 4s/step
+8/8 [==============================] - 42s 5s/step
 </pre>
 </div>
 </div>
@@ -467,6 +468,8 @@ nb_path: "00_image.ipynb"
   <thead>
     <tr style="text-align: right;">
       <th></th>
+      <th>filepaths</th>
+      <th>classes</th>
       <th>0</th>
       <th>1</th>
       <th>2</th>
@@ -475,9 +478,9 @@ nb_path: "00_image.ipynb"
       <th>5</th>
       <th>6</th>
       <th>7</th>
-      <th>8</th>
-      <th>9</th>
       <th>...</th>
+      <th>2038</th>
+      <th>2039</th>
       <th>2040</th>
       <th>2041</th>
       <th>2042</th>
@@ -486,13 +489,13 @@ nb_path: "00_image.ipynb"
       <th>2045</th>
       <th>2046</th>
       <th>2047</th>
-      <th>filepaths</th>
-      <th>classes</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
+      <td>./sample_data/cats_vs_dogs/train/cat/cat.0.jpg</td>
+      <td>cat</td>
       <td>0.133268</td>
       <td>0.416758</td>
       <td>1.458256</td>
@@ -501,9 +504,9 @@ nb_path: "00_image.ipynb"
       <td>0.015364</td>
       <td>0.013365</td>
       <td>1.423097</td>
-      <td>0.413051</td>
-      <td>0.010663</td>
       <td>...</td>
+      <td>0.463998</td>
+      <td>0.461862</td>
       <td>1.845307</td>
       <td>0.395472</td>
       <td>0.001949</td>
@@ -512,11 +515,11 @@ nb_path: "00_image.ipynb"
       <td>1.694634</td>
       <td>0.374132</td>
       <td>0.520977</td>
-      <td>./sample_data/cats_vs_dogs/train/cat/cat.0.jpg</td>
-      <td>0</td>
     </tr>
     <tr>
       <th>1</th>
+      <td>./sample_data/cats_vs_dogs/train/cat/cat.1.jpg</td>
+      <td>cat</td>
       <td>0.301924</td>
       <td>1.074781</td>
       <td>0.000000</td>
@@ -525,9 +528,9 @@ nb_path: "00_image.ipynb"
       <td>0.063934</td>
       <td>0.103987</td>
       <td>0.011720</td>
-      <td>0.000000</td>
-      <td>0.043833</td>
       <td>...</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
       <td>0.204798</td>
       <td>0.089238</td>
       <td>0.000000</td>
@@ -536,11 +539,11 @@ nb_path: "00_image.ipynb"
       <td>0.046991</td>
       <td>0.007193</td>
       <td>0.000000</td>
-      <td>./sample_data/cats_vs_dogs/train/cat/cat.1.jpg</td>
-      <td>0</td>
     </tr>
     <tr>
       <th>2</th>
+      <td>./sample_data/cats_vs_dogs/train/cat/cat.10.jpg</td>
+      <td>cat</td>
       <td>0.071524</td>
       <td>0.014293</td>
       <td>0.007412</td>
@@ -549,9 +552,9 @@ nb_path: "00_image.ipynb"
       <td>0.099297</td>
       <td>0.057757</td>
       <td>0.000000</td>
-      <td>0.000000</td>
-      <td>0.118381</td>
       <td>...</td>
+      <td>0.356797</td>
+      <td>0.666519</td>
       <td>0.000000</td>
       <td>1.286243</td>
       <td>0.030465</td>
@@ -560,11 +563,11 @@ nb_path: "00_image.ipynb"
       <td>0.184107</td>
       <td>0.146302</td>
       <td>0.191065</td>
-      <td>./sample_data/cats_vs_dogs/train/cat/cat.10.jpg</td>
-      <td>0</td>
     </tr>
     <tr>
       <th>3</th>
+      <td>./sample_data/cats_vs_dogs/train/cat/cat.100.jpg</td>
+      <td>cat</td>
       <td>0.405527</td>
       <td>0.018546</td>
       <td>0.059608</td>
@@ -573,9 +576,9 @@ nb_path: "00_image.ipynb"
       <td>0.011074</td>
       <td>0.029712</td>
       <td>0.002353</td>
-      <td>0.000000</td>
-      <td>0.420814</td>
       <td>...</td>
+      <td>0.572264</td>
+      <td>0.075824</td>
       <td>0.186881</td>
       <td>0.821028</td>
       <td>0.000000</td>
@@ -584,11 +587,11 @@ nb_path: "00_image.ipynb"
       <td>0.062721</td>
       <td>1.133202</td>
       <td>0.188214</td>
-      <td>./sample_data/cats_vs_dogs/train/cat/cat.100.jpg</td>
-      <td>0</td>
     </tr>
     <tr>
       <th>4</th>
+      <td>./sample_data/cats_vs_dogs/train/cat/cat.101.jpg</td>
+      <td>cat</td>
       <td>0.097891</td>
       <td>0.686931</td>
       <td>0.316419</td>
@@ -597,9 +600,9 @@ nb_path: "00_image.ipynb"
       <td>1.373904</td>
       <td>0.181614</td>
       <td>0.015783</td>
-      <td>0.152097</td>
-      <td>0.047016</td>
       <td>...</td>
+      <td>0.023964</td>
+      <td>0.134328</td>
       <td>0.046708</td>
       <td>1.474841</td>
       <td>0.630403</td>
@@ -608,8 +611,6 @@ nb_path: "00_image.ipynb"
       <td>0.216485</td>
       <td>0.725319</td>
       <td>0.006628</td>
-      <td>./sample_data/cats_vs_dogs/train/cat/cat.101.jpg</td>
-      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -627,7 +628,7 @@ nb_path: "00_image.ipynb"
 
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Cases">Cases<a class="anchor-link" href="#Cases"> </a></h2>
+<h2 id="Training-a-ML-Model">Training a ML Model<a class="anchor-link" href="#Training-a-ML-Model"> </a></h2>
 </div>
 </div>
 </div>
@@ -641,7 +642,8 @@ nb_path: "00_image.ipynb"
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="o">=</span><span class="n">df</span>
 
 <span class="n">test</span><span class="o">=</span><span class="n">ife</span><span class="o">.</span><span class="n">extract_features_from_directory</span><span class="p">(</span><span class="s1">&#39;./sample_data/cats_vs_dogs/valid&#39;</span><span class="p">,</span>
-                                       <span class="n">include_classes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                                         <span class="n">export_class_names</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                                         <span class="n">classes_as_folders</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -793,8 +795,11 @@ nb_path: "00_image.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
-<span class="n">y_pred</span><span class="o">=</span><span class="n">lr</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X_test</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="o">&gt;</span><span class="mf">0.6</span><span class="p">),</span> <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">y_pred</span><span class="o">=</span><span class="n">lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">),</span> 
+            <span class="n">annot</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> 
+            <span class="n">xticklabels</span><span class="o">=</span><span class="n">lr</span><span class="o">.</span><span class="n">classes_</span><span class="p">,</span>
+            <span class="n">yticklabels</span><span class="o">=</span><span class="n">lr</span><span class="o">.</span><span class="n">classes_</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -809,7 +814,7 @@ nb_path: "00_image.ipynb"
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x65b077390&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x1ac4325510&gt;</pre>
 </div>
 
 </div>
@@ -819,11 +824,305 @@ nb_path: "00_image.ipynb"
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
 </div>
 
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Customizing-Model">Customizing Model<a class="anchor-link" href="#Customizing-Model"> </a></h2>
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ife</span> <span class="o">=</span> <span class="n">ImageFeatureExtractor</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras.applications.vgg16</span> <span class="kn">import</span> <span class="n">VGG16</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.applications.vgg16</span> <span class="kn">import</span> <span class="n">preprocess_input</span>
+
+<span class="n">model</span><span class="o">=</span><span class="n">VGG16</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="s1">&#39;imagenet&#39;</span><span class="p">,</span> <span class="n">include_top</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ife</span><span class="o">.</span><span class="n">model</span><span class="o">=</span><span class="n">model</span>
+<span class="n">ife</span><span class="o">.</span><span class="n">preprocess_input</span><span class="o">=</span><span class="n">preprocess_input</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vector</span><span class="o">=</span><span class="n">ife</span><span class="o">.</span><span class="n">img_to_vector</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vector</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(1, 7, 7, 512)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">features</span><span class="o">=</span><span class="n">ife</span><span class="o">.</span><span class="n">extract_features_from_directory</span><span class="p">(</span><span class="s1">&#39;./sample_data/cats_vs_dogs/train/cat&#39;</span><span class="p">,</span>
+                                            <span class="n">classes_as_folders</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+                                            <span class="n">export_vectors_as_df</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">features</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Found 128 validated image filenames.
+4/4 [==============================] - 43s 11s/step
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(128, 7, 7, 512)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">tensorflow.keras.applications.vgg19</span> <span class="kn">import</span> <span class="n">VGG19</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.preprocessing</span> <span class="kn">import</span> <span class="n">image</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.applications.vgg19</span> <span class="kn">import</span> <span class="n">preprocess_input</span>
+<span class="kn">from</span> <span class="nn">tensorflow.keras.models</span> <span class="kn">import</span> <span class="n">Model</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">base_model</span> <span class="o">=</span> <span class="n">VGG19</span><span class="p">(</span><span class="n">weights</span><span class="o">=</span><span class="s1">&#39;imagenet&#39;</span><span class="p">)</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">Model</span><span class="p">(</span><span class="n">inputs</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="n">input</span><span class="p">,</span> <span class="n">outputs</span><span class="o">=</span><span class="n">base_model</span><span class="o">.</span><span class="n">get_layer</span><span class="p">(</span><span class="s1">&#39;fc2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">output</span><span class="p">)</span>
+<span class="n">ife</span><span class="o">.</span><span class="n">model</span><span class="o">=</span><span class="n">model</span>
+<span class="n">ife</span><span class="o">.</span><span class="n">preprocess_input</span><span class="o">=</span><span class="n">preprocess_input</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vector</span><span class="o">=</span><span class="n">ife</span><span class="o">.</span><span class="n">img_to_vector</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+<span class="n">vector</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>array([[0.      , 0.      , 2.011712, ..., 0.      , 0.      , 0.      ]],
+      dtype=float32)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">vector</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>(1, 4096)</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+    {% endraw %}
+
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Things-to-consider-changing">Things to consider changing<a class="anchor-link" href="#Things-to-consider-changing"> </a></h3><ul>
+<li><p>Load image method from pytorch to keras</p>
+<ul>
+<li>Problem: cant control the preprocessing method, images are resized instead of a center-crop method</li>
+<li>Advantage: Remove dependency of pytorch, also, images that are loaded from folder will be preprocessed by keras anyway</li>
+<li>Decision: Keep both, no big deal having extra dependency</li>
+</ul>
+</li>
+<li><p>update <code>extract_features_from_directory</code> to <code>img_folder_to_vectors</code></p>
+<ul>
+<li>this way naming will be more consistent<ul>
+<li>However, examples will have to be updated</li>
+</ul>
+</li>
+<li>extract_features vs xxx_to_vectors vs xx_to_embedding vs directory_to_vectors</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+    {% raw %}
+    
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cat notes.txt
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>https://nbdev.fast.ai/example.html
+
+Things missing:
+- Review naming terminology
+- Updateextract_features_from_directory to from_directory
+- include_classes-&gt; export_classes
+</pre>
+</div>
 </div>
 
 </div>

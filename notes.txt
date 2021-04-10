@@ -2,3 +2,5 @@ https://nbdev.fast.ai/example.html
 
 Things missing:
 - Review naming terminology
+- Updateextract_features_from_directory to from_directory
+- include_classes-> export_classes
