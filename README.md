@@ -4,7 +4,7 @@
 
 ## Install
 
-```python
+```
 #hide_output
 !pip install deepfeatx
 ```
@@ -19,13 +19,13 @@
 ## Usage
 ### Extracting features from an image
 
-```python
+```
 #hide_output
 from deepfeatx.image import ImageFeatureExtractor
 fe = ImageFeatureExtractor()
 ```
 
-```python
+```
 im_url='https://raw.githubusercontent.com/WittmannF/deepfeatx/master/sample_data/cats_vs_dogs/valid/dog/dog.124.jpg'
 fe.read_img_url(im_url)
 ```
@@ -37,7 +37,7 @@ fe.read_img_url(im_url)
 
 
 
-```python
+```
 fe.url_to_vector(im_url)
 ```
 
@@ -56,12 +56,12 @@ fe.url_to_vector(im_url)
 
 ### Extracting Features from a Folder with Images
 
-```python
+```
 #hide_output
 !git clone https://github.com/WittmannF/image-scraper.git
 ```
 
-```python
+```
 df=fe.extract_features_from_directory('image-scraper/images/pug',
                                    classes_as_folders=False,
                                    export_vectors_as_df=True)
@@ -238,7 +238,7 @@ main_directory/
 ```
 We can enter `main_directory` as input by changing `classes_as_folders` as True:
 
-```python
+```
 df=fe.extract_features_from_directory('image-scraper/images/',
                                       classes_as_folders=True,
                                       export_vectors_as_df=True,
@@ -434,7 +434,7 @@ The usage of `export_class_names=True` will add a new column to the dataframe wi
 ### Cats vs Dogs using Keras vs `deepfeatx`
 First let's compare the code of one of the simplest deep learning libraries (Keras) with `deepfeatx`. As example, let's use a subset of Cats vs Dogs:
 
-```python
+```
 #hide_output
 from deepfeatx.image import download_dataset
 download_dataset('https://github.com/dl7days/datasets/raw/master/cats-dogs-data.zip', 'cats-dogs-data.zip')
@@ -442,7 +442,7 @@ download_dataset('https://github.com/dl7days/datasets/raw/master/cats-dogs-data.
 
 Here's the keras implementation for a great performance result:
 
-```python
+```
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Flatten, Dense, GlobalAveragePooling2D
 from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input
@@ -477,11 +477,11 @@ model = Sequential([base_model,
     Found 400 images belonging to 2 classes.
 
 
-```python
+```
 model.compile(optimizer=Adam(learning_rate=1e-4), loss='sparse_categorical_crossentropy', metrics=['accuracy'])
 ```
 
-```python
+```
 model.fit(train_gen, epochs=3, validation_data=valid_gen)
 ```
 
@@ -494,7 +494,7 @@ model.fit(train_gen, epochs=3, validation_data=valid_gen)
 
 By looking at `val_accuracy` we can confirm the results seems great. Let's also plot some other metrics:
 
-```python
+```
 from sklearn.metrics import roc_auc_score, classification_report, confusion_matrix
 import seaborn as sns
 y_pred = model.predict(valid_gen)
@@ -506,7 +506,7 @@ print("ROC AUC Score", roc)
     ROC AUC Score 0.9989
 
 
-```python
+```
 cm=confusion_matrix(y_test, y_pred.argmax(axis=1))
 sns.heatmap(cm, annot=True, fmt='g')
 ```
@@ -529,7 +529,7 @@ Although we got an almost perfect clssifier, there are multiple details that som
 
 Now let's replicate the same results using `deepfeatx`:
 
-```python
+```
 from deepfeatx.image import ImageFeatureExtractor
 from sklearn.linear_model import LogisticRegression
 
@@ -571,7 +571,7 @@ lr = LogisticRegression().fit(X_train, y_train)
       n_iter_i = _check_optimize_result(
 
 
-```python
+```
 roc_auc_score(y_test, lr.predict_proba(X_test)[:, 1])
 ```
 
@@ -582,7 +582,7 @@ roc_auc_score(y_test, lr.predict_proba(X_test)[:, 1])
 
 
 
-```python
+```
 import seaborn as sns
 cm=confusion_matrix(y_test, lr.predict(X_test))
 sns.heatmap(cm, annot=True, fmt='g')
