@@ -1,7 +1,6 @@
 {
   "deepfeatx": {
     "Overview": "/",
-    "ImageFeatureExtractor": "image.html",
-    "Title": "Landmark_Classification_with_DeepFeatX.html"
+    "ImageFeatureExtractor": "image.html"
   }
 }

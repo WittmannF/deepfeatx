@@ -12,9 +12,6 @@ entries:
     - output: web,pdf
       title: ImageFeatureExtractor
       url: image.html
-    - output: web,pdf
-      title: Title
-      url: Landmark_Classification_with_DeepFeatX.html
     output: web
     title: deepfeatx
   output: web
