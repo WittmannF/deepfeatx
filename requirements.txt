@@ -1,8 +1,10 @@
-numpy==1.18.1
-tensorflow==1.14.0
-torchvision==0.2.2
-requests==2.23.0
-pandas==1.0.3
-matplotlib==3.1.3
-Pillow==8.2.0
+numpy
+tensorflow
+torchvision
+requests
+pandas
+matplotlib
+Pillow
+scikit-learn
+seaborn
 keras
