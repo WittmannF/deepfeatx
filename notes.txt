@@ -4,3 +4,14 @@ Things missing:
 - Review naming terminology
 - Updateextract_features_from_directory to from_directory
 - include_classes-> export_classes
+
+Before pushing
+- nbdev_clean_nbs
+- nbdev_build_docs
+- nbdev_build_lib
+- nbdev_install_git_hooks
+
+Sending to pipy
+- update version name
+- make pypi
+
