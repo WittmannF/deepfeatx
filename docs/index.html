@@ -67,7 +67,8 @@ nb_path: "index.ipynb"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Usage">Usage<a class="anchor-link" href="#Usage"> </a></h2><h3 id="Extracting-features-from-an-image">Extracting features from an image<a class="anchor-link" href="#Extracting-features-from-an-image"> </a></h3>
+<h2 id="Usage">Usage<a class="anchor-link" href="#Usage"> </a></h2><h3 id="Extracting-features-from-an-image">Extracting features from an image<a class="anchor-link" href="#Extracting-features-from-an-image"> </a></h3><p><code>deepfeatx</code> allows extracting features from the models 'efficientnetb0', 'efficientnetb4', 'efficientnetb7' and 'resnet50'. As default we are using Resnet50 but you can also specify different models as the class input:</p>
+
 </div>
 </div>
 </div>
@@ -79,7 +80,7 @@ nb_path: "index.ipynb"
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">deepfeatx.image</span> <span class="kn">import</span> <span class="n">ImageFeatureExtractor</span>
-<span class="n">fe</span> <span class="o">=</span> <span class="n">ImageFeatureExtractor</span><span class="p">()</span>
+<span class="n">fe</span> <span class="o">=</span> <span class="n">ImageFeatureExtractor</span><span class="p">(</span><span class="s1">&#39;efficientnetb4&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -89,6 +90,13 @@ nb_path: "index.ipynb"
 </div>
     {% endraw %}
 
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Next, let's transform the following URL into a vector:</p>
+
+</div>
+</div>
+</div>
     {% raw %}
     
 <div class="cell border-box-sizing code_cell rendered">
@@ -144,21 +152,11 @@ nb_path: "index.ipynb"
 
 <div class="output_area">
 
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>2021-10-06 11:27:13.679687: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:185] None of the MLIR Optimization Passes are enabled (registered 2)
-2021-10-06 11:27:13.679874: W tensorflow/core/platform/profile_utils/cpu_utils.cc:128] Failed to get CPU frequency: 0 Hz
-2021-10-06 11:27:13.846942: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[0.282272  , 1.0504342 , 0.11333481, ..., 0.18499802, 0.02220213,
-        0.06158632]], dtype=float32)</pre>
+<pre>array([[-0.19569655,  0.01385073, -0.18466987, ..., -0.18626775,
+         0.24537565,  0.03650745]], dtype=float32)</pre>
 </div>
 
 </div>
@@ -217,15 +215,7 @@ nb_path: "index.ipynb"
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Found 4 validated image filenames.
-1/1 [==============================] - 0s 412ms/step
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>2021-10-06 11:27:16.893822: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+1/1 [==============================] - 0s 89ms/step
 </pre>
 </div>
 </div>
@@ -263,118 +253,118 @@ nb_path: "index.ipynb"
       <th>7</th>
       <th>8</th>
       <th>...</th>
-      <th>2038</th>
-      <th>2039</th>
-      <th>2040</th>
-      <th>2041</th>
-      <th>2042</th>
-      <th>2043</th>
-      <th>2044</th>
-      <th>2045</th>
-      <th>2046</th>
-      <th>2047</th>
+      <th>1782</th>
+      <th>1783</th>
+      <th>1784</th>
+      <th>1785</th>
+      <th>1786</th>
+      <th>1787</th>
+      <th>1788</th>
+      <th>1789</th>
+      <th>1790</th>
+      <th>1791</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>image-scraper/images/pug/efd08a2dc5.jpg</td>
-      <td>0.030705</td>
-      <td>0.042393</td>
-      <td>0.422986</td>
-      <td>1.316509</td>
-      <td>0.020907</td>
-      <td>0.000000</td>
-      <td>0.081956</td>
-      <td>0.404423</td>
-      <td>0.489835</td>
+      <td>-0.053781</td>
+      <td>-0.201073</td>
+      <td>-0.109230</td>
+      <td>0.032315</td>
+      <td>-0.154896</td>
+      <td>-0.163725</td>
+      <td>-0.233414</td>
+      <td>-0.199399</td>
+      <td>-0.207240</td>
       <td>...</td>
-      <td>0.013765</td>
-      <td>0.642072</td>
-      <td>1.818821</td>
-      <td>0.299441</td>
-      <td>0.000000</td>
-      <td>0.419997</td>
-      <td>0.200106</td>
-      <td>0.179524</td>
-      <td>0.026852</td>
-      <td>0.079208</td>
+      <td>-0.184487</td>
+      <td>-0.191406</td>
+      <td>-0.158955</td>
+      <td>0.106836</td>
+      <td>0.073545</td>
+      <td>0.519778</td>
+      <td>-0.221428</td>
+      <td>-0.187045</td>
+      <td>-0.086689</td>
+      <td>-0.228142</td>
     </tr>
     <tr>
       <th>1</th>
       <td>image-scraper/images/pug/24d0f1eee3.jpg</td>
-      <td>0.068498</td>
-      <td>0.319734</td>
-      <td>0.081250</td>
-      <td>1.248270</td>
-      <td>0.035602</td>
-      <td>0.003398</td>
-      <td>0.000000</td>
-      <td>0.131528</td>
-      <td>0.099514</td>
+      <td>-0.179735</td>
+      <td>-0.149042</td>
+      <td>-0.099841</td>
+      <td>-0.043361</td>
+      <td>-0.176758</td>
+      <td>-0.191918</td>
+      <td>-0.232161</td>
+      <td>-0.136291</td>
+      <td>-0.212060</td>
       <td>...</td>
-      <td>0.258502</td>
-      <td>1.042543</td>
-      <td>0.691716</td>
-      <td>0.264937</td>
-      <td>0.112621</td>
-      <td>0.927995</td>
-      <td>0.050389</td>
-      <td>0.000000</td>
-      <td>0.087217</td>
-      <td>0.066992</td>
+      <td>-0.075074</td>
+      <td>-0.171430</td>
+      <td>-0.185827</td>
+      <td>0.104012</td>
+      <td>-0.179634</td>
+      <td>0.252138</td>
+      <td>-0.235885</td>
+      <td>-0.064212</td>
+      <td>-0.009336</td>
+      <td>-0.150108</td>
     </tr>
     <tr>
       <th>2</th>
       <td>image-scraper/images/pug/6fb189ce56.jpg</td>
-      <td>0.373005</td>
-      <td>0.102008</td>
-      <td>0.097662</td>
-      <td>0.362927</td>
-      <td>0.549803</td>
-      <td>0.118015</td>
-      <td>0.000000</td>
-      <td>0.104320</td>
-      <td>0.102526</td>
+      <td>-0.188432</td>
+      <td>-0.128387</td>
+      <td>-0.153920</td>
+      <td>0.126379</td>
+      <td>-0.090949</td>
+      <td>-0.178837</td>
+      <td>-0.169744</td>
+      <td>-0.131994</td>
+      <td>-0.176617</td>
       <td>...</td>
-      <td>0.210635</td>
-      <td>0.213147</td>
-      <td>0.013510</td>
-      <td>0.574433</td>
-      <td>0.017234</td>
-      <td>0.628009</td>
-      <td>0.000000</td>
-      <td>0.184550</td>
-      <td>0.000000</td>
-      <td>0.248099</td>
+      <td>0.470620</td>
+      <td>-0.133934</td>
+      <td>0.057369</td>
+      <td>0.198847</td>
+      <td>1.394713</td>
+      <td>-0.043932</td>
+      <td>-0.185945</td>
+      <td>-0.094914</td>
+      <td>-0.144376</td>
+      <td>0.320053</td>
     </tr>
     <tr>
       <th>3</th>
       <td>image-scraper/images/pug/ee815ebc87.jpg</td>
-      <td>0.263904</td>
-      <td>0.430294</td>
-      <td>0.391808</td>
-      <td>0.033076</td>
-      <td>0.200174</td>
-      <td>0.019310</td>
-      <td>0.002792</td>
-      <td>0.129120</td>
-      <td>0.050257</td>
+      <td>-0.108604</td>
+      <td>-0.076769</td>
+      <td>-0.191977</td>
+      <td>-0.003384</td>
+      <td>-0.160474</td>
+      <td>-0.008317</td>
+      <td>-0.222178</td>
+      <td>-0.157181</td>
+      <td>-0.205097</td>
       <td>...</td>
-      <td>0.048244</td>
-      <td>0.147806</td>
-      <td>1.430154</td>
-      <td>0.266686</td>
-      <td>0.005126</td>
-      <td>0.158225</td>
-      <td>0.097526</td>
-      <td>0.005045</td>
-      <td>0.060016</td>
-      <td>1.109626</td>
+      <td>0.162647</td>
+      <td>-0.003036</td>
+      <td>-0.095424</td>
+      <td>0.039418</td>
+      <td>-0.083985</td>
+      <td>0.276322</td>
+      <td>-0.185036</td>
+      <td>-0.169026</td>
+      <td>0.432216</td>
+      <td>0.229381</td>
     </tr>
   </tbody>
 </table>
-<p>4 rows × 2049 columns</p>
+<p>4 rows × 1793 columns</p>
 </div>
 </div>
 
@@ -428,22 +418,7 @@ nb_path: "index.ipynb"
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Found 504 images belonging to 6 classes.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>2021-10-06 11:27:22.669056: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>16/16 [==============================] - 6s 358ms/step
+16/16 [==============================] - 9s 565ms/step
 </pre>
 </div>
 </div>
@@ -481,16 +456,16 @@ nb_path: "index.ipynb"
       <th>6</th>
       <th>7</th>
       <th>...</th>
-      <th>2038</th>
-      <th>2039</th>
-      <th>2040</th>
-      <th>2041</th>
-      <th>2042</th>
-      <th>2043</th>
-      <th>2044</th>
-      <th>2045</th>
-      <th>2046</th>
-      <th>2047</th>
+      <th>1782</th>
+      <th>1783</th>
+      <th>1784</th>
+      <th>1785</th>
+      <th>1786</th>
+      <th>1787</th>
+      <th>1788</th>
+      <th>1789</th>
+      <th>1790</th>
+      <th>1791</th>
     </tr>
   </thead>
   <tbody>
@@ -498,125 +473,125 @@ nb_path: "index.ipynb"
       <th>0</th>
       <td>image-scraper/images/chihuahua/00dcf98689.jpg</td>
       <td>chihuahua</td>
-      <td>0.640897</td>
-      <td>0.887126</td>
-      <td>0.017012</td>
-      <td>0.723459</td>
-      <td>0.164907</td>
-      <td>0.010150</td>
-      <td>0.042344</td>
-      <td>0.987457</td>
+      <td>-0.159810</td>
+      <td>-0.143636</td>
+      <td>-0.163834</td>
+      <td>-0.189329</td>
+      <td>-0.221989</td>
+      <td>-0.205568</td>
+      <td>-0.032348</td>
+      <td>-0.196095</td>
       <td>...</td>
-      <td>0.289271</td>
-      <td>0.182086</td>
-      <td>0.638064</td>
-      <td>0.092432</td>
-      <td>0.212789</td>
-      <td>0.077480</td>
-      <td>0.255031</td>
-      <td>0.006371</td>
-      <td>0.489620</td>
-      <td>0.028672</td>
+      <td>0.187660</td>
+      <td>0.382510</td>
+      <td>-0.098162</td>
+      <td>-0.184861</td>
+      <td>0.262455</td>
+      <td>0.031863</td>
+      <td>-0.142880</td>
+      <td>-0.176995</td>
+      <td>-0.137101</td>
+      <td>-0.197719</td>
     </tr>
     <tr>
       <th>1</th>
       <td>image-scraper/images/chihuahua/01ee02c2fb.jpg</td>
       <td>chihuahua</td>
-      <td>0.357992</td>
-      <td>0.128552</td>
-      <td>0.227736</td>
-      <td>0.652588</td>
-      <td>0.014283</td>
-      <td>0.092680</td>
-      <td>0.049545</td>
-      <td>0.319637</td>
+      <td>-0.115785</td>
+      <td>-0.178243</td>
+      <td>-0.154352</td>
+      <td>-0.074939</td>
+      <td>-0.182898</td>
+      <td>-0.234842</td>
+      <td>0.201118</td>
+      <td>-0.172307</td>
       <td>...</td>
-      <td>0.061090</td>
-      <td>0.526585</td>
-      <td>2.363337</td>
-      <td>0.160859</td>
-      <td>0.000000</td>
-      <td>0.008739</td>
-      <td>0.401081</td>
-      <td>1.377398</td>
-      <td>0.383465</td>
-      <td>0.434211</td>
+      <td>0.096958</td>
+      <td>-0.147701</td>
+      <td>-0.117756</td>
+      <td>-0.172870</td>
+      <td>0.753768</td>
+      <td>-0.196702</td>
+      <td>-0.142921</td>
+      <td>-0.159372</td>
+      <td>-0.219529</td>
+      <td>-0.172731</td>
     </tr>
     <tr>
       <th>2</th>
       <td>image-scraper/images/chihuahua/040df01fb4.jpg</td>
       <td>chihuahua</td>
-      <td>0.163308</td>
-      <td>0.383921</td>
-      <td>0.029490</td>
-      <td>0.985443</td>
-      <td>0.866045</td>
-      <td>0.098337</td>
-      <td>0.000000</td>
-      <td>0.634062</td>
+      <td>-0.224309</td>
+      <td>-0.140264</td>
+      <td>-0.221784</td>
+      <td>0.082428</td>
+      <td>0.034317</td>
+      <td>-0.244586</td>
+      <td>-0.143733</td>
+      <td>-0.217184</td>
       <td>...</td>
-      <td>0.188044</td>
-      <td>0.000000</td>
-      <td>0.056569</td>
-      <td>1.115319</td>
-      <td>0.000000</td>
-      <td>0.005084</td>
-      <td>0.072280</td>
-      <td>0.555855</td>
-      <td>0.333000</td>
-      <td>0.413303</td>
+      <td>0.113856</td>
+      <td>-0.015320</td>
+      <td>0.485527</td>
+      <td>0.115924</td>
+      <td>0.359226</td>
+      <td>0.059734</td>
+      <td>0.705865</td>
+      <td>-0.108514</td>
+      <td>-0.211965</td>
+      <td>-0.201553</td>
     </tr>
     <tr>
       <th>3</th>
       <td>image-scraper/images/chihuahua/04d8487a97.jpg</td>
       <td>chihuahua</td>
-      <td>0.206927</td>
-      <td>3.128521</td>
-      <td>0.147507</td>
-      <td>0.104669</td>
-      <td>0.554029</td>
-      <td>2.415109</td>
-      <td>0.009964</td>
-      <td>0.171642</td>
+      <td>0.357453</td>
+      <td>0.228814</td>
+      <td>-0.130092</td>
+      <td>0.076011</td>
+      <td>-0.097715</td>
+      <td>0.076276</td>
+      <td>0.280204</td>
+      <td>-0.187367</td>
       <td>...</td>
-      <td>0.000000</td>
-      <td>1.297839</td>
-      <td>1.165449</td>
-      <td>0.562891</td>
-      <td>0.000000</td>
-      <td>0.395750</td>
-      <td>0.250796</td>
-      <td>0.295067</td>
-      <td>0.534072</td>
-      <td>0.051334</td>
+      <td>0.510490</td>
+      <td>-0.069560</td>
+      <td>0.060880</td>
+      <td>-0.190473</td>
+      <td>-0.038110</td>
+      <td>-0.168990</td>
+      <td>-0.210013</td>
+      <td>-0.141430</td>
+      <td>-0.176050</td>
+      <td>0.030997</td>
     </tr>
     <tr>
       <th>4</th>
       <td>image-scraper/images/chihuahua/0d9fa44dea.jpg</td>
       <td>chihuahua</td>
-      <td>0.233232</td>
-      <td>0.355028</td>
-      <td>0.453336</td>
-      <td>0.060354</td>
-      <td>0.479405</td>
-      <td>0.000000</td>
-      <td>0.099390</td>
-      <td>0.223719</td>
+      <td>-0.053391</td>
+      <td>-0.073038</td>
+      <td>-0.131840</td>
+      <td>-0.125724</td>
+      <td>-0.090771</td>
+      <td>-0.176459</td>
+      <td>0.088454</td>
+      <td>-0.138470</td>
       <td>...</td>
-      <td>0.308505</td>
-      <td>0.376597</td>
-      <td>1.075250</td>
-      <td>0.416980</td>
-      <td>0.073678</td>
-      <td>0.316829</td>
-      <td>0.620357</td>
-      <td>0.125714</td>
-      <td>0.179848</td>
-      <td>0.110405</td>
+      <td>0.297104</td>
+      <td>0.212539</td>
+      <td>-0.039888</td>
+      <td>-0.214346</td>
+      <td>-0.026465</td>
+      <td>0.059569</td>
+      <td>-0.172730</td>
+      <td>-0.144529</td>
+      <td>0.012751</td>
+      <td>-0.211402</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 2050 columns</p>
+<p>5 rows × 1794 columns</p>
 </div>
 </div>
 
@@ -678,7 +653,6 @@ nb_path: "index.ipynb"
 <span class="kn">from</span> <span class="nn">tensorflow.keras.layers</span> <span class="kn">import</span> <span class="n">Flatten</span><span class="p">,</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">GlobalAveragePooling2D</span>
 <span class="kn">from</span> <span class="nn">tensorflow.keras.applications.resnet50</span> <span class="kn">import</span> <span class="n">ResNet50</span><span class="p">,</span> <span class="n">preprocess_input</span>
 <span class="kn">from</span> <span class="nn">tensorflow.keras.preprocessing.image</span> <span class="kn">import</span> <span class="n">ImageDataGenerator</span>
-<span class="kn">from</span> <span class="nn">tensorflow.keras.optimizers</span> <span class="kn">import</span> <span class="n">Adam</span>
 
 <span class="n">TARGET_SHAPE</span> <span class="o">=</span> <span class="p">(</span><span class="mi">224</span><span class="p">,</span> <span class="mi">224</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">TRAIN_PATH</span> <span class="o">=</span> <span class="s1">&#39;cats-dogs-data/train&#39;</span>
@@ -733,7 +707,8 @@ Found 400 images belonging to 2 classes.
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">optimizer</span><span class="o">=</span><span class="n">Adam</span><span class="p">(</span><span class="n">learning_rate</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">),</span> <span class="n">loss</span><span class="o">=</span><span class="s1">&#39;sparse_categorical_crossentropy&#39;</span><span class="p">,</span> <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">loss</span><span class="o">=</span><span class="s1">&#39;sparse_categorical_crossentropy&#39;</span><span class="p">,</span> 
+              <span class="n">metrics</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;accuracy&#39;</span><span class="p">])</span>
 </pre></div>
 
     </div>
@@ -771,10 +746,46 @@ Found 400 images belonging to 2 classes.
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2021-10-06 11:29:26.088412: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
-2021-10-06 11:29:26.256 python[95381:1139332] -[MPSGraph adamUpdateWithLearningRateTensor:beta1Tensor:beta2Tensor:epsilonTensor:beta1PowerTensor:beta2PowerTensor:valuesTensor:momentumTensor:velocityTensor:maximumVelocityTensor:gradientTensor:name:]: unrecognized selector sent to instance 0x2a93793b0
+<pre>2021-10-09 13:35:09.882000: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
 </pre>
 </div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>63/63 [==============================] - ETA: 0s - loss: 0.5989 - accuracy: 0.9355</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2021-10-09 13:35:33.430145: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>63/63 [==============================] - 29s 435ms/step - loss: 0.5989 - accuracy: 0.9355 - val_loss: 0.1222 - val_accuracy: 0.9750
+Epoch 2/3
+63/63 [==============================] - 28s 438ms/step - loss: 0.1239 - accuracy: 0.9695 - val_loss: 0.0506 - val_accuracy: 0.9900
+Epoch 3/3
+63/63 [==============================] - 27s 425ms/step - loss: 0.0941 - accuracy: 0.9795 - val_loss: 0.2257 - val_accuracy: 0.9725
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;keras.callbacks.History at 0x16ffce0a0&gt;</pre>
+</div>
+
 </div>
 
 </div>
@@ -814,8 +825,16 @@ Found 400 images belonging to 2 classes.
 
 <div class="output_area">
 
+<div class="output_subarea output_stream output_stderr output_text">
+<pre>2021-10-09 13:36:39.564183: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+</pre>
+</div>
+</div>
+
+<div class="output_area">
+
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>ROC AUC Score 0.9989
+<pre>ROC AUC Score 0.99475
 </pre>
 </div>
 </div>
@@ -849,7 +868,7 @@ Found 400 images belonging to 2 classes.
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fcc41c57090&gt;</pre>
+<pre>&lt;AxesSubplot:&gt;</pre>
 </div>
 
 </div>
@@ -859,7 +878,7 @@ Found 400 images belonging to 2 classes.
 
 
 <div class="output_png output_subarea ">
-<img src="data:image/png;base64,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
+<img src="data:image/png;base64,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
 "
 >
 </div>
@@ -877,7 +896,7 @@ Found 400 images belonging to 2 classes.
 <p>Although we got an almost perfect clssifier, there are multiple details that someone who is coming from sklearn has to be careful when using Keras, for example:</p>
 <ul>
 <li>Correctly setup the Data Generator</li>
-<li>Fine tune the learning rate</li>
+<li>Select the optimizer and a learning rate</li>
 <li>Adjust the batch size</li>
 </ul>
 <p>Now let's replicate the same results using <code>deepfeatx</code>:</p>
@@ -930,7 +949,7 @@ Found 400 images belonging to 2 classes.
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2021-10-06 11:27:40.528937: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+<pre>2021-10-09 13:37:10.903967: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
 </pre>
 </div>
 </div>
@@ -938,9 +957,9 @@ Found 400 images belonging to 2 classes.
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>63/63 [==============================] - 22s 350ms/step
+<pre>63/63 [==============================] - 22s 353ms/step
 Found 400 images belonging to 2 classes.
-13/13 [==============================] - 4s 351ms/step
+13/13 [==============================] - 4s 354ms/step
 </pre>
 </div>
 </div>

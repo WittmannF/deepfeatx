@@ -19,7 +19,7 @@ import os
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Flatten, Dense, GlobalAveragePooling2D
 from tensorflow.keras.applications import resnet50
-from tensorflow.keras.applications import EfficientNetB0
+from tensorflow.keras.applications import EfficientNetB0, EfficientNetB4, EfficientNetB7
 from tensorflow.keras.applications import efficientnet
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
@@ -92,6 +92,32 @@ class ImageFeatureExtractor():
         elif model_name=='efficientnetb0':
             self.preprocess_input = efficientnet.preprocess_input
             base_model = EfficientNetB0(include_top=False,
+                                        input_shape=self.target_shape)
+
+            for layer in base_model.layers:
+                layer.trainable=False
+
+            model = Sequential([base_model,
+                                GlobalAveragePooling2D()])
+
+            return model
+
+        elif model_name=='efficientnetb4':
+            self.preprocess_input = efficientnet.preprocess_input
+            base_model = EfficientNetB4(include_top=False,
+                                        input_shape=self.target_shape)
+
+            for layer in base_model.layers:
+                layer.trainable=False
+
+            model = Sequential([base_model,
+                                GlobalAveragePooling2D()])
+
+            return model
+
+        elif model_name=='efficientnetb7':
+            self.preprocess_input = efficientnet.preprocess_input
+            base_model = EfficientNetB7(include_top=False,
                                         input_shape=self.target_shape)
 
             for layer in base_model.layers:

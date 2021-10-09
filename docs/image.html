@@ -97,7 +97,7 @@ nb_path: "00_image.ipynb"
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ife</span> <span class="o">=</span> <span class="n">ImageFeatureExtractor</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;efficientnetb0&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ife</span> <span class="o">=</span> <span class="n">ImageFeatureExtractor</span><span class="p">(</span><span class="n">model_name</span><span class="o">=</span><span class="s1">&#39;efficientnetb4&#39;</span><span class="p">)</span>
 <span class="n">url</span><span class="o">=</span><span class="s1">&#39;https://raw.githubusercontent.com/WittmannF/ImageDataGenerator-example/master/flow_from_dataframe/train/cat.101.jpg&#39;</span>
 <span class="n">img</span><span class="o">=</span><span class="n">ife</span><span class="o">.</span><span class="n">read_img_url</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
 <span class="n">img</span>
@@ -109,16 +109,6 @@ nb_path: "00_image.ipynb"
 
 <div class="output_wrapper">
 <div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Downloading data from https://storage.googleapis.com/keras-applications/efficientnetb0_notop.h5
-16711680/16705208 [==============================] - 1s 0us/step
-16719872/16705208 [==============================] - 1s 0us/step
-</pre>
-</div>
-</div>
 
 <div class="output_area">
 
@@ -158,17 +148,17 @@ nb_path: "00_image.ipynb"
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Model: &#34;sequential_1&#34;
+<pre>Model: &#34;sequential_3&#34;
 _________________________________________________________________
 Layer (type)                 Output Shape              Param #   
 =================================================================
-efficientnetb0 (Functional)  (None, 7, 7, 1280)        4049571   
+efficientnetb4 (Functional)  (None, 7, 7, 1792)        17673823  
 _________________________________________________________________
-global_average_pooling2d_1 ( (None, 1280)              0         
+global_average_pooling2d_3 ( (None, 1792)              0         
 =================================================================
-Total params: 4,049,571
+Total params: 17,673,823
 Trainable params: 0
-Non-trainable params: 4,049,571
+Non-trainable params: 17,673,823
 _________________________________________________________________
 </pre>
 </div>
@@ -203,8 +193,8 @@ _________________________________________________________________
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>array([[-0.01482432, -0.05527921,  0.23075758, ...,  0.53876066,
-         0.51287   , -0.053831  ]], dtype=float32)</pre>
+<pre>array([[ 0.08807908,  0.05671257, -0.1471191 , ...,  0.09422535,
+         0.3004987 , -0.23516044]], dtype=float32)</pre>
 </div>
 
 </div>
@@ -237,7 +227,7 @@ _________________________________________________________________
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(1, 1280)</pre>
+<pre>(1, 1792)</pre>
 </div>
 
 </div>
@@ -271,22 +261,7 @@ _________________________________________________________________
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Found 128 validated image filenames.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>2021-10-06 11:18:14.455687: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>4/4 [==============================] - 2s 179ms/step
+4/4 [==============================] - 2s 566ms/step
 </pre>
 </div>
 </div>
@@ -324,142 +299,142 @@ _________________________________________________________________
       <th>7</th>
       <th>8</th>
       <th>...</th>
-      <th>1270</th>
-      <th>1271</th>
-      <th>1272</th>
-      <th>1273</th>
-      <th>1274</th>
-      <th>1275</th>
-      <th>1276</th>
-      <th>1277</th>
-      <th>1278</th>
-      <th>1279</th>
+      <th>1782</th>
+      <th>1783</th>
+      <th>1784</th>
+      <th>1785</th>
+      <th>1786</th>
+      <th>1787</th>
+      <th>1788</th>
+      <th>1789</th>
+      <th>1790</th>
+      <th>1791</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
       <td>./sample_data/cats_vs_dogs/train/cat/cat.6.jpg</td>
-      <td>0.225212</td>
-      <td>0.058640</td>
-      <td>-0.095501</td>
-      <td>-0.073367</td>
-      <td>1.321245</td>
-      <td>0.074913</td>
-      <td>0.470487</td>
-      <td>-0.012128</td>
-      <td>0.598165</td>
+      <td>0.116951</td>
+      <td>-0.221062</td>
+      <td>0.761894</td>
+      <td>-0.092694</td>
+      <td>-0.076450</td>
+      <td>-0.108019</td>
+      <td>0.415168</td>
+      <td>-0.173198</td>
+      <td>-0.035755</td>
       <td>...</td>
-      <td>-0.112729</td>
-      <td>-0.122853</td>
-      <td>0.436117</td>
-      <td>-0.026819</td>
-      <td>-0.091265</td>
-      <td>0.064628</td>
-      <td>0.315744</td>
-      <td>-0.017118</td>
-      <td>-0.146257</td>
-      <td>0.295975</td>
+      <td>0.313312</td>
+      <td>1.018930</td>
+      <td>0.483991</td>
+      <td>-0.229575</td>
+      <td>-0.204801</td>
+      <td>0.081248</td>
+      <td>0.078551</td>
+      <td>-0.092992</td>
+      <td>-0.231758</td>
+      <td>-0.083301</td>
     </tr>
     <tr>
       <th>1</th>
       <td>./sample_data/cats_vs_dogs/train/cat/cat.30.jpg</td>
-      <td>0.202250</td>
-      <td>0.160452</td>
-      <td>0.557351</td>
-      <td>-0.085632</td>
-      <td>-0.105077</td>
-      <td>0.298232</td>
-      <td>0.134021</td>
-      <td>0.112814</td>
-      <td>-0.054420</td>
+      <td>-0.041335</td>
+      <td>0.876377</td>
+      <td>0.181209</td>
+      <td>0.131120</td>
+      <td>-0.024123</td>
+      <td>0.205932</td>
+      <td>0.048091</td>
+      <td>1.025681</td>
+      <td>0.609106</td>
       <td>...</td>
-      <td>0.039416</td>
-      <td>-0.137677</td>
-      <td>0.114761</td>
-      <td>0.092318</td>
-      <td>0.287135</td>
-      <td>0.156551</td>
-      <td>-0.152136</td>
-      <td>0.054678</td>
-      <td>-0.113809</td>
-      <td>-0.012793</td>
+      <td>-0.081827</td>
+      <td>-0.094285</td>
+      <td>-0.171935</td>
+      <td>-0.134893</td>
+      <td>-0.193842</td>
+      <td>-0.102166</td>
+      <td>-0.219899</td>
+      <td>-0.136968</td>
+      <td>-0.089459</td>
+      <td>-0.086938</td>
     </tr>
     <tr>
       <th>2</th>
       <td>./sample_data/cats_vs_dogs/train/cat/cat.24.jpg</td>
-      <td>0.200531</td>
-      <td>-0.030708</td>
-      <td>-0.143709</td>
-      <td>-0.012947</td>
-      <td>-0.012103</td>
-      <td>0.094327</td>
-      <td>-0.082119</td>
-      <td>-0.095636</td>
-      <td>0.067225</td>
+      <td>-0.135372</td>
+      <td>0.471884</td>
+      <td>0.072875</td>
+      <td>-0.119508</td>
+      <td>0.345890</td>
+      <td>-0.246175</td>
+      <td>0.078913</td>
+      <td>0.706911</td>
+      <td>0.401920</td>
       <td>...</td>
-      <td>-0.033623</td>
-      <td>-0.080547</td>
-      <td>0.466413</td>
-      <td>0.051606</td>
-      <td>0.061862</td>
-      <td>-0.129659</td>
-      <td>-0.135904</td>
-      <td>0.200370</td>
-      <td>-0.130808</td>
-      <td>-0.067054</td>
+      <td>-0.063463</td>
+      <td>-0.075799</td>
+      <td>-0.206424</td>
+      <td>-0.044581</td>
+      <td>-0.058786</td>
+      <td>-0.156586</td>
+      <td>-0.205742</td>
+      <td>-0.006546</td>
+      <td>-0.082014</td>
+      <td>-0.003087</td>
     </tr>
     <tr>
       <th>3</th>
       <td>./sample_data/cats_vs_dogs/train/cat/cat.18.jpg</td>
-      <td>0.230099</td>
-      <td>0.081425</td>
-      <td>0.335069</td>
-      <td>-0.099280</td>
-      <td>0.002416</td>
-      <td>-0.154609</td>
-      <td>-0.161813</td>
-      <td>-0.096908</td>
-      <td>-0.139070</td>
+      <td>0.254091</td>
+      <td>0.054704</td>
+      <td>-0.209234</td>
+      <td>-0.227897</td>
+      <td>-0.193533</td>
+      <td>0.020678</td>
+      <td>-0.015793</td>
+      <td>-0.170381</td>
+      <td>-0.147609</td>
       <td>...</td>
-      <td>0.028308</td>
-      <td>-0.209473</td>
-      <td>-0.039060</td>
-      <td>-0.077227</td>
-      <td>-0.084279</td>
-      <td>-0.004354</td>
-      <td>0.241149</td>
-      <td>-0.130906</td>
-      <td>0.188262</td>
-      <td>-0.114258</td>
+      <td>-0.173851</td>
+      <td>0.149490</td>
+      <td>-0.226558</td>
+      <td>-0.219611</td>
+      <td>-0.217078</td>
+      <td>-0.011710</td>
+      <td>-0.242624</td>
+      <td>-0.161250</td>
+      <td>0.126028</td>
+      <td>-0.116945</td>
     </tr>
     <tr>
       <th>4</th>
       <td>./sample_data/cats_vs_dogs/train/cat/cat.19.jpg</td>
-      <td>0.070455</td>
-      <td>-0.092657</td>
-      <td>-0.064933</td>
-      <td>-0.109489</td>
-      <td>-0.021460</td>
-      <td>-0.124329</td>
-      <td>0.626454</td>
-      <td>0.006053</td>
-      <td>-0.146398</td>
+      <td>0.225112</td>
+      <td>0.112024</td>
+      <td>-0.041257</td>
+      <td>0.481150</td>
+      <td>-0.007439</td>
+      <td>0.261059</td>
+      <td>0.425952</td>
+      <td>0.066571</td>
+      <td>-0.162935</td>
       <td>...</td>
-      <td>-0.028919</td>
-      <td>-0.058245</td>
-      <td>-0.126074</td>
-      <td>-0.084243</td>
-      <td>-0.021173</td>
-      <td>0.039658</td>
-      <td>-0.139905</td>
-      <td>0.121402</td>
-      <td>-0.110747</td>
-      <td>0.217937</td>
+      <td>0.102045</td>
+      <td>0.087069</td>
+      <td>0.055296</td>
+      <td>0.085589</td>
+      <td>-0.051083</td>
+      <td>-0.122145</td>
+      <td>-0.197829</td>
+      <td>0.185368</td>
+      <td>0.079091</td>
+      <td>0.133403</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 1281 columns</p>
+<p>5 rows × 1793 columns</p>
 </div>
 </div>
 
@@ -495,22 +470,7 @@ _________________________________________________________________
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Found 256 images belonging to 2 classes.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>2021-10-06 11:18:18.266867: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>8/8 [==============================] - 2s 213ms/step
+8/8 [==============================] - 4s 566ms/step
 </pre>
 </div>
 </div>
@@ -548,16 +508,16 @@ _________________________________________________________________
       <th>6</th>
       <th>7</th>
       <th>...</th>
-      <th>1270</th>
-      <th>1271</th>
-      <th>1272</th>
-      <th>1273</th>
-      <th>1274</th>
-      <th>1275</th>
-      <th>1276</th>
-      <th>1277</th>
-      <th>1278</th>
-      <th>1279</th>
+      <th>1782</th>
+      <th>1783</th>
+      <th>1784</th>
+      <th>1785</th>
+      <th>1786</th>
+      <th>1787</th>
+      <th>1788</th>
+      <th>1789</th>
+      <th>1790</th>
+      <th>1791</th>
     </tr>
   </thead>
   <tbody>
@@ -565,125 +525,125 @@ _________________________________________________________________
       <th>0</th>
       <td>./sample_data/cats_vs_dogs/train/cat/cat.0.jpg</td>
       <td>cat</td>
-      <td>0.456551</td>
-      <td>-0.036920</td>
-      <td>-0.117857</td>
-      <td>-0.120442</td>
-      <td>0.090476</td>
-      <td>0.630952</td>
-      <td>0.282625</td>
-      <td>-0.117053</td>
+      <td>-0.018913</td>
+      <td>0.954870</td>
+      <td>0.016952</td>
+      <td>0.221977</td>
+      <td>-0.070362</td>
+      <td>0.342110</td>
+      <td>-0.176075</td>
+      <td>-0.159596</td>
       <td>...</td>
-      <td>0.020791</td>
-      <td>-0.032444</td>
-      <td>0.279972</td>
-      <td>-0.100614</td>
-      <td>0.126624</td>
-      <td>-0.144146</td>
-      <td>-0.138254</td>
-      <td>0.226428</td>
-      <td>-0.159525</td>
-      <td>-0.007993</td>
+      <td>-0.152760</td>
+      <td>-0.039694</td>
+      <td>-0.054072</td>
+      <td>-0.055411</td>
+      <td>0.037326</td>
+      <td>-0.189080</td>
+      <td>-0.183035</td>
+      <td>-0.059127</td>
+      <td>-0.101486</td>
+      <td>-0.082480</td>
     </tr>
     <tr>
       <th>1</th>
       <td>./sample_data/cats_vs_dogs/train/cat/cat.1.jpg</td>
       <td>cat</td>
-      <td>0.087864</td>
-      <td>-0.109384</td>
-      <td>-0.148388</td>
-      <td>0.087301</td>
-      <td>-0.108840</td>
-      <td>-0.112653</td>
-      <td>-0.105029</td>
-      <td>-0.191852</td>
+      <td>-0.171484</td>
+      <td>-0.109371</td>
+      <td>0.126482</td>
+      <td>-0.049296</td>
+      <td>-0.198677</td>
+      <td>-0.199962</td>
+      <td>-0.194173</td>
+      <td>-0.041852</td>
       <td>...</td>
-      <td>-0.097658</td>
-      <td>-0.096658</td>
-      <td>-0.108985</td>
-      <td>-0.061243</td>
-      <td>0.043187</td>
-      <td>0.166429</td>
-      <td>-0.119754</td>
-      <td>0.636140</td>
-      <td>-0.167608</td>
-      <td>-0.118658</td>
+      <td>-0.044782</td>
+      <td>-0.188030</td>
+      <td>-0.226087</td>
+      <td>-0.217524</td>
+      <td>-0.198509</td>
+      <td>-0.176590</td>
+      <td>-0.213306</td>
+      <td>-0.190913</td>
+      <td>-0.059982</td>
+      <td>0.204377</td>
     </tr>
     <tr>
       <th>2</th>
       <td>./sample_data/cats_vs_dogs/train/cat/cat.10.jpg</td>
       <td>cat</td>
-      <td>0.023569</td>
-      <td>0.194844</td>
-      <td>-0.012433</td>
-      <td>-0.037307</td>
-      <td>-0.084910</td>
-      <td>-0.033898</td>
-      <td>0.274007</td>
-      <td>-0.135142</td>
+      <td>-0.052990</td>
+      <td>0.279232</td>
+      <td>-0.097103</td>
+      <td>0.214079</td>
+      <td>-0.165050</td>
+      <td>-0.120809</td>
+      <td>-0.139346</td>
+      <td>-0.158638</td>
       <td>...</td>
-      <td>-0.079801</td>
-      <td>-0.182763</td>
-      <td>0.060846</td>
-      <td>-0.094208</td>
-      <td>0.043399</td>
-      <td>0.149070</td>
-      <td>-0.105733</td>
-      <td>-0.118275</td>
-      <td>-0.087090</td>
-      <td>0.005981</td>
+      <td>-0.102000</td>
+      <td>0.144373</td>
+      <td>-0.104634</td>
+      <td>-0.153766</td>
+      <td>-0.139058</td>
+      <td>-0.124252</td>
+      <td>-0.209479</td>
+      <td>-0.072458</td>
+      <td>-0.067888</td>
+      <td>-0.201086</td>
     </tr>
     <tr>
       <th>3</th>
       <td>./sample_data/cats_vs_dogs/train/cat/cat.100.jpg</td>
       <td>cat</td>
-      <td>0.059996</td>
-      <td>0.440460</td>
-      <td>-0.110263</td>
-      <td>-0.148372</td>
-      <td>-0.152904</td>
-      <td>-0.107543</td>
-      <td>-0.065826</td>
-      <td>-0.107320</td>
+      <td>-0.041940</td>
+      <td>0.848829</td>
+      <td>-0.224974</td>
+      <td>0.232321</td>
+      <td>-0.235159</td>
+      <td>-0.057308</td>
+      <td>-0.213698</td>
+      <td>-0.073365</td>
       <td>...</td>
-      <td>-0.064428</td>
-      <td>-0.170988</td>
-      <td>0.088787</td>
-      <td>-0.104232</td>
-      <td>0.347278</td>
-      <td>0.661745</td>
-      <td>-0.055814</td>
-      <td>-0.098556</td>
-      <td>-0.202804</td>
-      <td>-0.133524</td>
+      <td>0.065788</td>
+      <td>0.176712</td>
+      <td>-0.142891</td>
+      <td>-0.151185</td>
+      <td>-0.116490</td>
+      <td>0.106698</td>
+      <td>-0.127730</td>
+      <td>-0.151329</td>
+      <td>-0.094567</td>
+      <td>-0.187071</td>
     </tr>
     <tr>
       <th>4</th>
       <td>./sample_data/cats_vs_dogs/train/cat/cat.101.jpg</td>
       <td>cat</td>
-      <td>-0.041377</td>
-      <td>-0.043872</td>
-      <td>0.098374</td>
-      <td>-0.107689</td>
-      <td>0.156048</td>
-      <td>0.118467</td>
-      <td>-0.022955</td>
-      <td>-0.158435</td>
+      <td>0.254403</td>
+      <td>0.188380</td>
+      <td>-0.125970</td>
+      <td>-0.041169</td>
+      <td>-0.083162</td>
+      <td>-0.024575</td>
+      <td>-0.203954</td>
+      <td>0.188182</td>
       <td>...</td>
-      <td>-0.037849</td>
-      <td>-0.118383</td>
-      <td>0.009495</td>
-      <td>-0.067195</td>
-      <td>0.145152</td>
-      <td>0.102556</td>
-      <td>-0.114290</td>
-      <td>0.040539</td>
-      <td>0.178128</td>
-      <td>-0.122962</td>
+      <td>0.356136</td>
+      <td>0.003100</td>
+      <td>-0.176625</td>
+      <td>-0.201984</td>
+      <td>-0.211214</td>
+      <td>-0.087063</td>
+      <td>0.069190</td>
+      <td>0.052086</td>
+      <td>0.253847</td>
+      <td>-0.224975</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 1282 columns</p>
+<p>5 rows × 1794 columns</p>
 </div>
 </div>
 
@@ -726,7 +686,7 @@ _________________________________________________________________
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Found 64 images belonging to 2 classes.
-2/2 [==============================] - 0s 231ms/step
+2/2 [==============================] - 1s 566ms/step
 </pre>
 </div>
 </div>
@@ -948,22 +908,6 @@ _________________________________________________________________
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/vgg16/vgg16_weights_tf_dim_ordering_tf_kernels_notop.h5
-58892288/58889256 [==============================] - 2s 0us/step
-58900480/58889256 [==============================] - 2s 0us/step
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -987,7 +931,7 @@ _________________________________________________________________
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2021-10-06 11:22:24.688204: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+<pre>2021-10-09 13:25:39.111541: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
 </pre>
 </div>
 </div>
@@ -1062,7 +1006,7 @@ _________________________________________________________________
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2021-10-06 11:22:31.246580: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+<pre>2021-10-09 13:25:42.184969: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
 </pre>
 </div>
 </div>
@@ -1070,7 +1014,7 @@ _________________________________________________________________
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>4/4 [==============================] - 2s 604ms/step
+<pre>4/4 [==============================] - 2s 595ms/step
 </pre>
 </div>
 </div>
@@ -1114,22 +1058,6 @@ _________________________________________________________________
 </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Downloading data from https://storage.googleapis.com/tensorflow/keras-applications/vgg19/vgg19_weights_tf_dim_ordering_tf_kernels.h5
-574717952/574710816 [==============================] - 23s 0us/step
-574726144/574710816 [==============================] - 23s 0us/step
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
     {% endraw %}
 
@@ -1154,7 +1082,7 @@ _________________________________________________________________
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stderr output_text">
-<pre>2021-10-06 11:23:04.827308: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
+<pre>2021-10-09 13:25:52.478022: I tensorflow/core/grappler/optimizers/custom_graph_optimizer_registry.cc:112] Plugin optimizer for device_type GPU is enabled.
 </pre>
 </div>
 </div>
@@ -1259,6 +1187,17 @@ Things missing:
 - Review naming terminology
 - Updateextract_features_from_directory to from_directory
 - include_classes-&gt; export_classes
+
+Before pushing
+- nbdev_clean_nbs
+- nbdev_build_docs
+- nbdev_build_lib
+- nbdev_install_git_hooks
+
+Sending to pipy
+- update version name
+- make pypi
+
 </pre>
 </div>
 </div>

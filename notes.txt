@@ -10,6 +10,7 @@ Before pushing
 - nbdev_build_docs
 - nbdev_build_lib
 - nbdev_install_git_hooks
+- nbdev_test_nbs (optional)
 
 Sending to pipy
 - update version name
